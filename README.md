@@ -30,5 +30,5 @@ This is the main page where products are displayed with the ID order PC view
 
 ## Product Add
 Here you can add products by filling the information  PC view
-![plot](./src/assets/Gitimg/5.PNG) ![plot](./src/assets/Gitimg/6.PNG)
+![plot](./src/assets/Gitimg/6.PNG) ![plot](./src/assets/Gitimg/5.PNG)
 
