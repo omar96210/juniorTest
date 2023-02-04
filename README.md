@@ -17,7 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Product List
 This is the main page where products are displayed with the ID order PC view
 
-![plot](./src/assets/Gitimg/1.png)  
+![plot](./src/assets/Gitimg/1.PNG)  
 
 ## Product Add
 Here you can add products by filling the information  PC view
@@ -26,7 +26,7 @@ Here you can add products by filling the information  PC view
 ## Product List
 This is the main page where products are displayed with the ID order PC view
 
-![plot](./src/assets/Gitimg/3.png)  ![plot](./src/assets/Gitimg/4.png)  
+![plot](./src/assets/Gitimg/3.PNG)  ![plot](./src/assets/Gitimg/4.PNG)  
 
 ## Product Add
 Here you can add products by filling the information  PC view
