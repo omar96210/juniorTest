@@ -14,14 +14,21 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Product List
+This is the main page where products are displayed with the ID order PC view
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![plot](./src/assets/Gitimg/1.png)  
 
-## Running end-to-end tests
+## Product Add
+Here you can add products by filling the information  PC view
+![plot](./src/assets/Gitimg/2.PNG)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Product List
+This is the main page where products are displayed with the ID order PC view
 
-## Further help
+![plot](./src/assets/Gitimg/3.png)  ![plot](./src/assets/Gitimg/4.png)  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Product Add
+Here you can add products by filling the information  PC view
+![plot](./src/assets/Gitimg/5.PNG) ![plot](./src/assets/Gitimg/6.PNG)
+
