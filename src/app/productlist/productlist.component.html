@@ -1,0 +1,87 @@
+<html>
+  <nav  class="navbar navbar-expand-lg" >
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-weight: bold; font-size: x-large; color: white;">Product List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <form class="d-flex" role="search">
+          
+            <button  id="add-product-btn" type="button" class="btn btn-outline-light" routerLink="/Addproduct" >ADD</button>
+          
+          <button  id="delete-product-btn" type="button" class="btn btn-outline-light" (click)="massDelete()">MASS DELETE</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <body  style="padding-top: 100px; padding-bottom: 250px;">
+    <section class="product-body">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
+  
+        <div class="col" *ngFor="let getdata of getdata">
+
+          <div class="card h-100" *ngIf="getdata.type === '1'" >
+            <div class="card-body text-center">
+              <input (change)="getCheckboxValues(getdata.id)" class="delete-checkbox form-check-input mt-0 float-start" type="checkbox" value="" style="border-color: black;" >
+              <p class="card-text">
+                <br>
+                {{getdata.sku}}
+                <br>
+                {{getdata.name}}
+                <br>
+                {{getdata.price}} $
+                <br>
+                Size: {{getdata.size}} MB
+              </p>
+            </div>
+          </div>
+
+          <div class="card h-100" *ngIf="getdata.type === '2'">
+            <div class="card-body text-center">
+              <input (change)="getCheckboxValues(getdata.id)" class="delete-checkbox form-check-input mt-0 float-start" type="checkbox" value="" style="border-color: black;" >
+              <p class="card-text">
+                <br>
+                {{getdata.sku}}
+                <br>
+                {{getdata.name}}
+                <br>
+                {{getdata.price}} $
+                <br>
+                Weight: {{getdata.weight}} KG
+              </p>
+            </div>
+          </div>
+
+          <div class="card h-100" *ngIf="getdata.type === '3'">
+            <div class="card-body text-center">
+              <input (change)="getCheckboxValues(getdata.id)" class="delete-checkbox form-check-input mt-0 float-start" type="checkbox" value="" style="border-color: black;" >
+              <p class="card-text">
+                <br>
+                {{getdata.sku}}
+                <br>
+                {{getdata.name}}
+                <br>
+                {{getdata.price}} $
+                <br>
+                Dimension: {{getdata.height}}x{{getdata.width}}x{{getdata.length}}
+              </p>
+            </div>
+          </div>
+
+          
+        </div>
+  
+  
+      </div>
+    
+    </section>
+    
+  </body>
+  
+
+</html>

@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-weight: bold; font-size: x-large; color: white;">Product Add</a>
+    <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+      <form class="d-flex" role="search">
+
+        <button  style="color: white;"id="save-product-btn" type="submit" form="product_form" class="btn btn-outline-light">Save</button>
+        <button  style="color: white;" id="Cancel-product-btn" type="button" class="btn btn-outline-light"
+        routerLink="/home">Cancel</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<body style="padding-top: 100px; padding-bottom: 100px;">
+
+  <form class="p-4" id="product_form" [formGroup]="productForm" (ngSubmit)="productdata(productForm)" autocomplete="off">
+    <div class="form-group col-lg-3 col-md-6 col-sm-6">
+      <div class="row p-2">
+        <div class="col-3">
+          <label [ngStyle]="{'color':skucolor}" class="" for="sku">SKU</label>
+        </div>
+        <div class="col-9">
+          <input type="text" name="sku" formControlName="sku" autocomplete="off" class="form-control" id="sku" >
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-3 col-md-6 col-sm-6">
+      <div class="row  p-2">
+        <div class="col-3">
+          <label [ngStyle]="{'color':namecolor}" class="" for="name">Name</label>
+        </div>
+        <div class="col-9">
+          <input type="text" name="name" formControlName="name" autocomplete="off" class="form-control" id="name">
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-3 col-md-6 col-sm-6">
+      <div class="row  p-2">
+        <div class="col-3">
+          <label [ngStyle]="{'color':pricecolor}" class="" for="price">Price ($)</label>
+        </div>
+        <div class="col-9">
+          <input value="1" onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" max="5" step="0.01" name="price" formControlName="price" autocomplete="off"
+            class="form-control" id="price">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-3 col-md-6 col-sm-6">
+      <div class="row  p-2">
+        <div class="col-5">
+          <label [ngStyle]="{'color':typecolor}" class="" for="type">Type Switcher</label>
+        </div>
+        <div class="col-7">
+          <select id="productType" class="form-select" formControlName="type" aria-label="Default select example"
+            (ngModelChange)='show($event)'>
+            <option selected disabled hidden>Choose here</option>
+            <option id="DVD" [value]="1">DVD</option>
+            <option id="Book" [value]="2">Book</option>
+            <option id="Furniture" [value]="3">Furniture</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="this.view1">
+      <div class="form-group col-lg-3 col-md-6 col-sm-6">
+        <div class="row  p-2">
+          <div class="col-4">
+            <label [ngStyle]="{'color':sizecolor}" class="" for="size">Size (MB)</label>
+          </div>
+          <div class="col-8">
+            <input onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" name="size" formControlName="size" autocomplete="off" class="form-control"
+              id="size">
+          </div>
+          <br><br>
+          <p style="font-weight: bold;">Please, provide Size in mb</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="this.view2">
+      <div class="form-group col-lg-3 col-md-6 col-sm-6">
+        <div class="row  p-2">
+          <div class="col-4">
+            <label [ngStyle]="{'color':weightcolor}" class="" for="weight">Weight (KG)</label>
+          </div>
+          <div class="col-8">
+            <input onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" step="0.001" name="weight" formControlName="weight" autocomplete="off"
+              class="form-control" id="weight">
+          </div>
+          <br><br>
+          <p style="font-weight: bold;">Please, provide weight in kg</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="this.view3">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="row  p-2">
+          <div class="form-group row p-2">
+            <div class="col-5">
+              <label [ngStyle]="{'color':heightcolor}" class="" for="height">Height (CM)</label>
+            </div>
+            <div class="col-7">
+              <input onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" step="0.01" name="height" formControlName="height" autocomplete="off"
+                class="form-control" id="height">
+            </div>
+          </div>
+          <div class="form-group row p-2">
+            <div class="col-5">
+              <label [ngStyle]="{'color':widthcolor}" class="" for="width">Width (CM)</label>
+            </div>
+            <div class="col-7">
+              <input onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" step="0.01" name="width" formControlName="width" autocomplete="off"
+                class="form-control" id="width">
+            </div>
+          </div>
+          <div class="form-group row p-2">
+            <div class="col-5">
+              <label [ngStyle]="{'color':lengthcolor}" class="" for="length">Length (CM)</label>
+            </div>
+            <div class="col-7">
+              <input onkeypress='return event.charCode !=101 && event.charCode != 43 && event.charCode != 45' type="number" min="1" step="0.01" name="length" formControlName="length" autocomplete="off"
+                class="form-control" id="length" >
+            </div>
+          </div>
+          <br><br>
+          <p style="font-weight: bold;">Please, provide dimensions in cm</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </form>
+</body>
